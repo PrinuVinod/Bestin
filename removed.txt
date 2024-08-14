@@ -1,0 +1,344 @@
+<!-- <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+        :root{
+            --tile2-length: 17.5vmin;
+            --animation-duration: 8s;
+        }
+
+        .kaleidoscope{
+            left: 50%;
+            width: calc(6 * .866 * var(--tile2-length));
+            height: 90vmin;
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-animation: rotation var(--animation-duration) linear infinite;
+                    animation: rotation var(--animation-duration) linear infinite;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .kaleidoscope:after{
+            content:'';
+            position:absolute;
+            height: inherit;
+            width: inherit;
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container2{
+            position: absolute;
+            width: calc(2 * var(--tile2-length));
+            height: calc(2 * var(--tile2-length));
+            border-radius: 50%;
+            overflow: hidden;
+            transform: translate( calc(var(--tile2-length) * -0.134 ), -50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container2:nth-child(1){
+            top: 50%;
+            left: 0%;
+        }
+
+        .container2:nth-child(2){
+            top: 50%;
+            left: calc(2 * calc(var(--tile2-length) * 0.866 ));
+        }
+
+        .container2:nth-child(3){
+            top: 50%;
+            left: calc(4 * calc(var(--tile2-length) * 0.866 ));
+        }
+
+        .container2:nth-child(4){
+            top: calc(50% - calc(1.5 * var(--tile2-length)));
+            left: calc(var(--tile2-length) * 0.866 );
+        }
+
+        .container2:nth-child(5){
+            top: calc(50% - calc(1.5 * var(--tile2-length)));
+            left: calc(3 * var(--tile2-length) * 0.866 );
+        }
+
+        .container2:nth-child(6){
+            top: calc(50% + calc(1.5 * var(--tile2-length)));
+            left: calc(var(--tile2-length) * 0.866 );
+        }
+
+        .container2:nth-child(7){
+            top: calc(50% + calc(1.5 * var(--tile2-length)));
+            left: calc(3 * var(--tile2-length) * 0.866 );
+        }
+
+        @-webkit-keyframes rotation{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotation{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        .tile2{
+            position: absolute;
+            top: 28%;
+            left: 25%;
+            width: var(--tile2-length);
+            height: calc(var(--tile2-length) * 0.866);
+            -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tile2:nth-child(1){
+            transform: rotate(30deg) translateY(50%) scaleX(-1);
+        }
+
+        .tile2:nth-child(2){
+            transform: rotate(90deg) translateY(50%);
+        }
+
+        .tile2:nth-child(3){
+            transform: rotate(150deg) translateY(50%) scaleX(-1);
+        }
+
+        .tile2:nth-child(4){
+            transform: rotate(210deg) translateY(50%);
+        }
+
+        .tile2:nth-child(5){
+            transform: rotate(270deg) translateY(50%) scaleX(-1);
+        }
+
+        .tile2:nth-child(6){
+            transform: rotate(330deg) translateY(50%);
+        }
+
+        .texture2{
+            position: absolute;
+            height: calc(1.75 * var(--tile2-length));
+            width: calc(1.75 * var(--tile2-length));
+            background-image: url(https://zupimages.net/up/21/39/6p27.png);
+            background-size: 100%;
+            -webkit-animation: rotation var(--animation-duration) linear infinite;
+                    animation: rotation var(--animation-duration) linear infinite;
+        }
+
+
+        .link {
+          position: fixed;
+          z-index: 10;
+          left: calc(2.5vmin - .75rem);
+          bottom: calc(2.5vmin - .75rem);
+          font-size: 1.5rem;
+          font-family: arial, sans-serif;
+          color: whitesmoke;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        .my-name {
+          position: relative;
+        }
+
+        .before, .after {
+          overflow: hidden;
+          width: 0px;
+          transition: width .5s;
+          transform-origin: right;
+        }
+
+        .before-text {
+          display: inline-block;
+          width: auto;
+          text-align: right;
+        }
+
+        .after-text {
+          display: flex;
+          align-items: center;
+          width: auto;
+          height: 3rem;
+          transform-origin: top center;
+        }
+
+        .link:hover .before {
+          width: 2.5rem;
+        }
+
+        .link:hover .after {
+          width: 4rem;
+        }
+
+        .link:hover .spin {
+          display: inline-block;
+          transition: .5s transform .5s ease-in-out;
+          transform: rotate(360deg);
+        }
+      </style>
+      <div class="overlay">
+        <div class="kaleidoscope">
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+          <div class="tile2">
+            <div class="texture2"></div>
+          </div>
+        </div>
+        </div>
+      </div> -->
